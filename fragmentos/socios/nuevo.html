@@ -1,0 +1,83 @@
+<div class="app-content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="mb-0 fs-3">Nuevo socio</h1>
+      </div>
+      <div class="col-sm-6">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb float-sm-end">
+            <li class="breadcrumb-item"><a href="/panel">Panel</a></li>
+            <li class="breadcrumb-item"><a href="/socios">Socios</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Datos del socio</h3>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nombre" class="form-label">Nombre *</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="apellido" class="form-label">Apellido *</label>
+              <input type="text" class="form-control" id="apellido" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="dni" class="form-label">DNI *</label>
+              <input type="text" class="form-control" id="dni" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="telefono">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="club" class="form-label">Club</label>
+              <select class="form-select" id="club">
+                <option value="">Seleccionar club…</option>
+                <option>Club Cóndor</option>
+                <option>Ala Delta Sur</option>
+                <option>Club Andino</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fecha-alta" class="form-label">Fecha de alta</label>
+              <input type="date" class="form-control" id="fecha-alta">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="estado" class="form-label">Estado</label>
+              <select class="form-select" id="estado">
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-save me-1"></i> Guardar
+            </button>
+            <a href="/socios" hx-get="./fragmentos/socios/listado.html" hx-target="#app-container"
+              hx-swap="innerHTML" data-ruta="/socios" class="btn btn-outline-secondary">
+              Cancelar
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

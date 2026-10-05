@@ -1,0 +1,132 @@
+<div class="app-content-header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1 class="mb-0 fs-3">Editar noticia</h1>
+      </div>
+      <div class="col-sm-6">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb float-sm-end">
+            <li class="breadcrumb-item"><a href="/panel" hx-get="./fragmentos/panel.html"
+                hx-target="#app-container" hx-swap="innerHTML" data-ruta="/panel">Panel</a></li>
+            <li class="breadcrumb-item">Gestión WEB</li>
+            <li class="breadcrumb-item"><a href="/web/noticias" hx-get="./fragmentos/web/noticias.html"
+                hx-target="#app-container" hx-swap="innerHTML" data-ruta="/web/noticias">Noticias</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Editar</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="app-content">
+  <div class="container-fluid">
+    <form id="form-noticia" data-id="1">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Contenido</h3>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="titulo-noticia" class="form-label">Título *</label>
+                <input type="text" class="form-control" id="titulo-noticia" required
+                  value="Campeonato Argentino 2026">
+              </div>
+
+              <div class="mb-3">
+                <label for="resumen-noticia" class="form-label">Resumen</label>
+                <textarea class="form-control" id="resumen-noticia" rows="2">El campeonato nacional se disputará en marzo en la provincia de Córdoba.</textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="contenido-noticia" class="form-label">Cuerpo de la noticia</label>
+                <!-- El contenido real va acá adentro, entre <textarea> y </textarea> -->
+                <textarea class="form-control" id="contenido-noticia" name="contenido" rows="15">
+<p>La Federación Argentina de Vuelo Libre se complace en anunciar el <strong>Campeonato Argentino 2026</strong>, que se llevará a cabo durante el mes de marzo en la provincia de Córdoba.</p>
+<p>El evento reunirá a los mejores pilotos del país en las categorías de <em>ala delta</em> y <em>parapente</em>.</p>
+<h2>Sede y fechas</h2>
+<p>La competencia se desarrollará en el valle de Punilla, con base en la localidad de <strong>La Cumbre</strong>.</p>
+<blockquote>Esperamos superar los 120 participantes de la edición anterior.</blockquote>
+<h2>Inscripciones</h2>
+<ul>
+  <li>Socios FAVL: sin cargo</li>
+  <li>No socios: $15.000</li>
+  <li>Cierre de inscripción: 28 de febrero</li>
+</ul>
+<p>Más información en la sección de contacto.</p>
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Publicación</h3>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="estado-noticia" class="form-label">Estado</label>
+                <select class="form-select" id="estado-noticia">
+                  <option value="borrador">Borrador</option>
+                  <option value="publicada" selected>Publicada</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="fecha-noticia" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="fecha-noticia" value="2026-03-15">
+              </div>
+
+              <div class="mb-3">
+                <label for="autor-noticia" class="form-label">Autor</label>
+                <input type="text" class="form-control" id="autor-noticia" value="Administrador">
+              </div>
+
+              <div class="mb-3">
+                <label for="categoria-noticia" class="form-label">Categoría</label>
+                <select class="form-select" id="categoria-noticia">
+                  <option value="">Sin categoría</option>
+                  <option selected>Eventos</option>
+                  <option>Competiciones</option>
+                  <option>Institucional</option>
+                  <option>Prensa</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="imagen-portada" class="form-label">Imagen de portada</label>
+                <input type="file" class="d-none" id="imagen-portada" accept="image/*">
+                <div class="input-group">
+                  <button type="button" class="btn btn-outline-secondary" id="btn-elegir-portada">
+                    <i class="bi bi-folder2-open me-1"></i> Cambiar archivo
+                  </button>
+                  <input type="text" class="form-control" id="nombre-archivo-portada"
+                    value="portada-campeonato.jpg" readonly>
+                </div>
+                <div class="form-text">Dejá vacío para mantener la actual. Máx. 2 MB.</div>
+                <div id="preview-portada" class="mt-2">
+                  <!-- Preview de la portada actual -->
+                  <img src="./assets/img/favl/portada-campeonato.jpg" class="img-fluid rounded border" alt="Portada actual">
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-flex gap-2">
+              <button type="submit" class="btn btn-primary flex-grow-1">
+                <i class="bi bi-save me-1"></i> Guardar cambios
+              </button>
+              <a href="/web/noticias" hx-get="./fragmentos/web/noticias.html" hx-target="#app-container"
+                hx-swap="innerHTML" data-ruta="/web/noticias" class="btn btn-outline-secondary">
+                Cancelar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
